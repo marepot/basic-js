@@ -14,8 +14,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  function createDreamTeam(members) {
+let team=members.map(name => name[0])
+  team.sort( (a, b) => a.localeCompare(b,{ ignorePunctuation: true }));
+	 
+return team.filter(element => {
+  return element !== undefined;
+});
 }
 
 module.exports = {
