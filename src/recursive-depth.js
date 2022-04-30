@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class DepthCalculator {
-  calculateDepth(/* arr */) {
+  calculateDepth( arr ) {
     let count = 0;
   const recursion = arr => { 
     count ++; 
