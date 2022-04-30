@@ -13,15 +13,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(/* members */) {
-  function createDreamTeam(members) {
-let team=members.map(name => name[0])
-  team.sort( (a, b) => a.localeCompare(b,{ ignorePunctuation: true }));
-	 
-return team.filter(element => {
-  return element !== undefined;
+function createDreamTeam( members ) {
+  let team=members.map(name => name[0])
+team.sort( (a, b) => a.localeCompare(b,{ ignorePunctuation: true }));
+
+ team.filter(element => {
+return element !== undefined;
 });
-}
+return team.join('')
 }
 module.exports = {
   createDreamTeam
