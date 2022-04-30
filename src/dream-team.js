@@ -22,7 +22,7 @@ return team.filter(element => {
   return element !== undefined;
 });
 }
-
+}
 module.exports = {
   createDreamTeam
 };
