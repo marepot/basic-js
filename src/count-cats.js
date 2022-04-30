@@ -24,7 +24,6 @@ let query='^^';
 }
 return count;
 }
-}
 
 module.exports = {
   countCats
