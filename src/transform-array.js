@@ -13,16 +13,30 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-function transform(/* arr */) {
-  console.log(arr.indexOf("--discard-next"));
- if (arr.includes("--discard-next")==true){
+function transform( arr ) {
+ if (arr.isArray==false){
+    throw new console.error("\'arr\' parameter must be an instance of the Array!");
+  }  
+  else if (arr.length==0){
+    return arr;
+  }
+ else if (arr.includes("--discard-next")==true){
  let n =arr.indexOf("--discard-next");
+ if (n==arr.length){
+   arr.splice(n,1);
+ }else{
   arr.splice(n, 2);
-  return arr;
+ }
+ return arr;
  }
  else if (arr.includes("--discard-prev")==true){
  let n = arr.indexOf("--discard-prev");
+ if (n>0){
  arr.splice(n-1,2);
+ }
+ else{
+  arr.splice(n,1);
+ }
  return arr;
  }
  else if (arr.includes("--double-next")==true){
